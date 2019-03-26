@@ -1,12 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import Banner from './components/Banner/Banner';
+import Container from './components/Container/Container'
+import Nav from './components/Nav/Nav';
+
+class App extends React.Component {
+
+    state = {
+        active: 'active'
+    }
+
+    render() {
+        return (
+            <Banner>
+                <Container>
+                    <Nav active={this.setActive} />
+                </Container>
+            </Banner>
+
+        )
+    }
+}
 
 ReactDOM.render(<App />, document.getElementById('root'));
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
